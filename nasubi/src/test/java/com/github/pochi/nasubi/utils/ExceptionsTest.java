@@ -1,4 +1,4 @@
-package com.github.pochi.nasubi;
+package com.github.pochi.nasubi.utils;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -7,7 +7,7 @@ import java.util.Optional;
 
 import org.junit.Test;
 
-import com.github.pochi.nasubi.Exceptions;
+import com.github.pochi.nasubi.utils.Exceptions;
 
 public class ExceptionsTest {
     @Test

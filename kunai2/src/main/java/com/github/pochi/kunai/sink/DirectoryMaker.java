@@ -5,7 +5,7 @@ import java.nio.file.FileSystem;
 import java.nio.file.Path;
 
 import com.github.pochi.kunai.util.PathHelper;
-import com.github.pochi.nasubi.Exceptions;
+import com.github.pochi.nasubi.utils.Exceptions;
 
 public class DirectoryMaker {
     public static void mkdirs(Path givenPath, FileSystem givenSystem){

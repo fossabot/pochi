@@ -9,13 +9,13 @@ import java.util.stream.Collectors;
 
 import org.junit.Test;
 
-import com.github.pochi.nasubi.Exceptions;
 import com.github.pochi.nasubi.ServiceLoader;
 import com.github.pochi.nasubi.ServiceLoaderBuilder;
 import com.github.pochi.nasubi.spi.NoDefaultConstructorService;
 import com.github.pochi.nasubi.spi.NoDescriptionService;
 import com.github.pochi.nasubi.spi.NoImplementationService;
 import com.github.pochi.nasubi.spi.Service;
+import com.github.pochi.nasubi.utils.Exceptions;
 
 public class ServiceLoaderTest {
     @Test
@@ -23,7 +23,7 @@ public class ServiceLoaderTest {
         ServiceLoaderBuilder builder = new ServiceLoaderBuilder();
         ServiceLoader<Service> loader = builder.build(Service.class);
 
-        List<Service> list = loader.instantiate().collect(Collectors.toList());
+        List<Service> list = loader.toInstance().collect(Collectors.toList());
         assertThat(list.size(), is(3));
 
         assertThat(list.get(0).getClass().getName(), is("com.github.pochi.nasubi.spi.ServiceImpl1"));
@@ -59,7 +59,7 @@ public class ServiceLoaderTest {
         ServiceLoaderBuilder builder = new ServiceLoaderBuilder();
         ServiceLoader<NoDefaultConstructorService> loader = builder.build(NoDefaultConstructorService.class);
         List<NoDefaultConstructorService> list = loader
-                .instantiate(clazz -> instantiate(clazz, "string"))
+                .toInstance(clazz -> instantiate(clazz, "string"))
                 .collect(Collectors.toList());
 
         assertThat(list.size(), is(2));

@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-import com.github.pochi.nasubi.Exceptions;
+import com.github.pochi.nasubi.utils.Exceptions;
 
 public class DataSinkHelper {
     public static FileSystem buildFileSystem(Path path){

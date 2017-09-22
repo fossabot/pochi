@@ -1,6 +1,13 @@
-package com.github.pochi.nasubi;
+package com.github.pochi.nasubi.utils;
 
 import java.util.Optional;
+
+import com.github.pochi.nasubi.ThrowableBiConsumer;
+import com.github.pochi.nasubi.ThrowableBiFunction;
+import com.github.pochi.nasubi.ThrowableBiPredicate;
+import com.github.pochi.nasubi.ThrowableConsumer;
+import com.github.pochi.nasubi.ThrowableFunction;
+import com.github.pochi.nasubi.ThrowablePredicate;
 
 public class Exceptions {
     private Exceptions() {

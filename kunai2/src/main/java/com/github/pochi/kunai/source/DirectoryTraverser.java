@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-import com.github.pochi.nasubi.Exceptions;
+import com.github.pochi.nasubi.utils.Exceptions;
 
 class DirectoryTraverser {
     private static final DirectoryStream.Filter<Path> FILTER = new EveryFileAcceptFilter();
