@@ -9,10 +9,6 @@ jp.cafebabe.pochi.birthmarks.pairs
 jp.cafebabe.pochi.birthmarks.parsers
 jp.cafebabe.pochi.birthmarks.rules
 jp.cafebabe.pochi.birthmarks.uc
-jp.cafebabe.pochi.cli.scripts
-jp.cafebabe.pochi.cli.scripts.helper
-jp.cafebabe.pochi.cli.ui
-jp.cafebabe.pochi.cli.util
 jp.cafebabe.pochi.izumo
 jp.cafebabe.pochi.izumo.builders
 jp.cafebabe.pochi.kunai
