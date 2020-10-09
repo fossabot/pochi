@@ -126,7 +126,7 @@ For more detail, see <a href="../examples">🐜 Examples</a>.</p>
 <h3 id="-docker">🐳 Docker</h3>
 <p>Container images of <strong>pochi</strong> for Docker are:</p>
 <ul>
-<li><code>tamada/pochi</code>
+<li><a href="https://hub.docker.com/r/tamada/pochi"><code>tamada/pochi</code></a>
 <ul>
 <li><code>2.0.0</code>, <code>latest</code>
 <ul>
@@ -141,7 +141,8 @@ For more detail, see <a href="../examples">🐜 Examples</a>.</p>
 </ul>
 </li>
 </ul>
-<p>To run <strong>pochi</strong> on Docker container OS</p>
+<p><a href="https://hub.docker.com/r/tamada/pochi"><img src="https://img.shields.io/badge/docker-tamada%2Fpochi%3A2.0.0-blue?logo=docker&amp;style=social" alt="Docker"></a></p>
+<p>To run <strong>pochi</strong> on Docker container OS, type the following commands.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ docker run --rm -v <span style="color:#e6db74">&#34;</span>$PWD<span style="color:#e6db74">&#34;</span>:/home/pochi tamada/pochi:2.0.0 <span style="color:#f92672">[</span>OPTIONS<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>SCRIPT <span style="color:#f92672">[</span>ARGV...<span style="color:#f92672">]]</span>
 </code></pre></div><ul>
 <li><code>OPTIONS</code>: the options for <strong>pochi</strong>.</li>
@@ -157,82 +158,93 @@ For more detail, see <a href="../examples">🐜 Examples</a>.</p>
 <ul>
 <li><code>USER</code>: <code>pochi</code></li>
 <li><code>WORKDIR</code>: <code>/home/pochi</code></li>
-<li><code>JAVA_HOME</code>: <code>/opt/java</code> (symbolic link from <code>/opt/openjdk-11-minimal</code>)</li>
+<li><code>JAVA_HOME</code>: <code>/opt/java</code> (symbolic link from <code>/opt/openjdk-11-minimal</code>)
+<ul>
+<li>This Java runtime environment do not include unnecessary modules.</li>
+</ul>
+</li>
 <li><code>GROOVY_HOME</code>: <code>/opt/groovy</code> (symbolic link from <code>/opt/groovy-3.0.5</code>)</li>
 <li><code>POCHI_HOME</code>: <code>/opt/pochi</code> (symbolic link from <code>/opt/pochi-2.0.0</code>)</li>
 </ul>
 <p class="navigation"><a href="#top" class="badge goto"><span class="label"><span class="far fa-caret-square-up label"></span> Go to</span><span class="value">top of the page</span></a></p>
 
 <h2 id="-the-birthmarking-flow">🏊‍♂️ The birthmarking flow</h2>
-<p>The birthmarking process in the pochi flows like below.</p>
-<figure>
-  <div class="mermaid" align="center">
-graph LR;
-CLASSES("Classes")
-BIRTHMARKS(Birthmarks)
-PAIRS(Birthmark pair)
-COMPARISONS(Comparisons)
-CSV(CSV file)
-CLASSES -- Extractor --> BIRTHMARKS
-CSV -- Parser --> BIRTHMARKS
-BIRTHMARKS -- PairMatcher --> PAIRS
-PAIRS -- Comparator --> COMPARISONS
-</div>
-  
+<p>The birthmarking process in <strong>pochi</strong> shows in Figure 1.</p>
+
+<figure >
+    
+        <img src="/pochi/images/birthmarking_process.svg" alt="Figure 1: birthmarking process in pochi" />
+    
+    
+    <figcaption>
+        <p>
+        Figure 1: birthmarking process in pochi
+        
+            
+        
+        </p> 
+    </figcaption>
+    
 </figure>
 
-<p>The followings are the description of the nodes and edges in the flowchart.</p>
+<p class="avatar_caption">
+  <p>The followings are the description of the nodes and edges in the flowchart.</p>
 <ul>
 <li><code>Classes</code>
 <ul>
 <li>is the Java class files, almost included in the jar files, and the directory.
-<strong>pochi</strong> treats them as the object of <a href="../apidocs/jp/cafebabe/pochi/kunai/source/DataSource.html"><code>DataSource</code></a></li>
+<strong>pochi</strong> treats them as the object of <a href="../apidocs/jp.cafebabe.kunai/jp/cafebabe/kunai/source/DataSource.html"><code>DataSource</code></a></li>
 </ul>
 </li>
-<li><code>Birthmarks</code>
+<li><a href="(../apidocs/jp.cafebabe.birthmarks/jp/cafebabe/birthmarks/entities/Birthmarks.html)"><code>Birthmarks</code></a>
 <ul>
 <li>shows the extracted characteristics from Java class files by certain method.
-In the <strong>pochi</strong>, <a href="../apidocs/jp/cafebabe/pochi/birthmarks/entities/Birthmarks.html"><code>Birthmarks</code></a> and <a href="../apidocs/jp/cafebabe/pochi/birthmarks/entities/Birthmark.html"><code>Birthmark</code></a> show the extracted birthmarks.
-The string representation of <a href="../apidocs/jp/cafebabe/pochi/birthmarks/entities/Birthmark.html"><code>Birthmark</code></a> (the return value of <code>toString</code> method) is CSV format, therefore, we can store them into some csv file.</li>
+In the <strong>pochi</strong>, <a href="../apidocs/jp.cafebabe.birthmarks/jp/cafebabe/birthmarks/entities/Birthmarks.html"><code>Birthmarks</code></a> and <a href="../apidocs/jp.cafebabe.birthmarks/jp/cafebabe/birthmarks/entities/Birthmark.html"><code>Birthmark</code></a> show the extracted birthmarks.
+The string representation of <a href="../apidocs/jp.cafebabe.birthmarks/jp/cafebabe/birthmarks/entities/Birthmark.html"><code>Birthmark</code></a> (the return value of <code>toString</code> method) is CSV format, therefore, we can store them into some csv file.</li>
 </ul>
 </li>
-<li><code>Pairs</code>
+<li><a href="../apidocs/jp.cafebabe.birthmarks/jp/cafebabe/birthmarks/entities/Pair.html"><code>Pair</code></a>
 <ul>
 <li>shows the pair list of extracted birthmarks.
-<strong>pochi</strong> shows these objects as <a href="../apidocs/jp/cafebabe/pochi/birthmarks/pairs/Pair.html"><code>Pair&lt;Birthmark&gt;</code></a>.</li>
+<strong>pochi</strong> shows these objects as <a href="../apidocs/jp.cafebabe.birthmarks/jp/cafebabe/birthmarks/entities/Pair.html"><code>Pair&lt;Birthmark&gt;</code></a>.</li>
 </ul>
 </li>
-<li><code>Comparisons</code>
+<li><a href="../apidocs/jp.cafebabe.birthmarks/jp/cafebabe/birthmarks/comparators/Comparisons.html"><code>Comparisons</code></a>
 <ul>
 <li>represents the comparison results of birthmarks by the certain similarity calculation algorithm.
-<strong>pochi</strong> shows these objects as <a href="../apidocs/jp/cafebabe/pochi/birthmarks/comparators/Comparisons.html"><code>Comparisons</code></a> and <a href="../apidocs/jp/cafebabe/pochi/birthmarks/comparators/Comparison.html"><code>Comparison</code></a>.</li>
+<strong>pochi</strong> shows these objects as <a href="../apidocs/jp.cafebabe.birthmarks/jp/cafebabe/birthmarks/comparators/Comparisons.html"><code>Comparisons</code></a> and <a href="../apidocs/jp.cafebabe.birthmarks/jp/cafebabe/birthmarks/comparators/Comparison.html"><code>Comparison</code></a>.</li>
 </ul>
 </li>
-<li><code>Extractor</code>
+<li><a href="../apidocs/jp.cafebabe.birthmarks/jp/cafebabe/birthmarks/extractors/Extractor.html"><code>Extractor</code></a>
 <ul>
 <li>extracts birthmarks from given class files by the certain algorithm.
-In the script file, <code>pochi.extractor(&quot;ALGORITHM_NAME&quot;)</code> obtains the instance of <a href="../apidocs/jp/cafebabe/pochi/birthmarks/extractors/Extractor.html"><code>Extractor</code></a>.</li>
+In the script file, <code>pochi.extractor(&quot;ALGORITHM_NAME&quot;)</code> obtains the instance of <a href="../apidocs/jp.cafebabe.birthmarks/jp/cafebabe/birthmarks/extractors/Extractor.html"><code>Extractor</code></a>.</li>
 </ul>
 </li>
-<li><code>Parser</code>
+<li><a href="../apidocs/jp.cafebabe.birthmarks/jp/cafebabe/birthmarks/BirthmarkParser.html"><code>Parser</code></a>
 <ul>
-<li>parses the given csv file and build <a href="../apidocs/jp/cafebabe/pochi/birthmarks/entities/Birthmarks.html"><code>Birthmarks</code></a> object.
-To get the instance of <a href="../apidocs/jp/cafebabe/pochi/birthmarks/BirthmarkParser.html"><code>BirthmarkParser</code></a>, call <code>pochi.parser()</code> method in the script file.</li>
+<li>parses the given csv file and build <a href="../apidocs/jp.cafebabe.birthmarks/jp/cafebabe/birthmarks/entities/Birthmarks.html"><code>Birthmarks</code></a> object.
+To get the instance of <a href="../apidocs/jp.cafebabe.birthmarks/jp/cafebabe/birthmarks/BirthmarkParser.html"><code>BirthmarkParser</code></a>, call <code>pochi.parser()</code> method in the script file.</li>
 </ul>
 </li>
-<li><code>PairMatcher</code>
+<li><a href="../apidocs/jp.cafebabe.birthmarks/jp/cafebabe/birthmarks/pairs/PairMatcher.html"><code>PairMatcher</code></a>
 <ul>
 <li>matches the pair of birthmarks by some algorithm.
-<code>pochi.matcher(&quot;ALGORITHM_NAME&quot;)</code> returns the instance of <a href="../apidocs/jp/cafebabe/pochi/birthmarks/pairs/PairMatcher.html"><code>PairMatcher</code></a></li>
+<code>pochi.matcher(&quot;ALGORITHM_NAME&quot;)</code> returns the instance of <a href="../apidocs/jp.cafebabe.birthmarks/jp/cafebabe/birthmarks/pairs/PairMatcher.html"><code>PairMatcher</code></a>.</li>
 </ul>
 </li>
-<li><code>Comparator</code>
+<li><a href="../apidocs/jp.cafebabe.birthmarks/jp/cafebabe/birthmarks/comparators/Comparator.html"><code>Comparator</code></a>
 <ul>
 <li>calculates similarity between two given birthmaks by the certain algorithm.
-In the script file, <code>pochi.comparator(&quot;ALGORITHM_NAME&quot;)</code> gets the instance of <a href="../apidocs/jp/cafebabe/pochi/birthmarks/comparators/Comparator.html"><code>Comparator</code></a></li>
+In the script file, <code>pochi.comparator(&quot;ALGORITHM_NAME&quot;)</code> gets the instance of <a href="../apidocs/jp.cafebabe.birthmarks/jp/cafebabe/birthmarks/comparators/Comparator.html"><code>Comparator</code></a>.</li>
 </ul>
 </li>
 </ul>
+
+</p>
+
+
+
 
 
     <footer class="site-footer">

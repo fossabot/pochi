@@ -6,7 +6,7 @@
     <description>Recent content in :house: Home on Pochi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 27 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://tamada.github.io/pochi/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>:newspaper: What is pochi</title>
       <link>https://tamada.github.io/pochi/description/</link>
-      <pubDate>Fri, 28 Aug 2020 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://tamada.github.io/pochi/description/</guid>
       <description>🔑 Key idea Almost traditional birthmark systems are usually simple input and output. For example, an user specifies the type of target birthmark, $p$ and $q$ as input, and obtains result as output. The process of such system is hard to use. Because, when the user would perform some process (ex. filtering results), it requires the update of birthmark system.
@@ -34,7 +34,7 @@ In general, the process of birthmarking is composed of extraction phase, and com
     <item>
       <title>:books: Birthmarks</title>
       <link>https://tamada.github.io/pochi/birthmarks/</link>
-      <pubDate>Wed, 13 Jun 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://tamada.github.io/pochi/birthmarks/</guid>
       <description>📗 Definition of Birthmarks 📘 Types of Birthmarks 📙 Similarities 📕 Theft Detection Process by Birthmarks  📗 Definition of Birthmarks Let $p$, and $q$ be a given programs, and $\mathcal{B}_f(p)$ be set of characteristics extracted from $p$ by a given method $f$. If the conditions below are met, $\mathcal{B}_f(p)$ is said to be a birthmark of $p$.
@@ -52,9 +52,21 @@ In general, the process of birthmarking is composed of extraction phase, and com
     </item>
     
     <item>
+      <title>:anchor: Install</title>
+      <link>https://tamada.github.io/pochi/install/</link>
+      <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tamada.github.io/pochi/install/</guid>
+      <description>🍺 Homebrew For macOS user, pochi supports homebrew installation.
+$ brew tap tamada/brew $ brew install pochi  Go totop of the page
+💪 Compiling pochi yourself For building yourself, clone the source code from GitHub, and build it with make and Maven.
+$ git clone https://github.com/tamada/pochi.git $ cd pochi $ make build-all Then, make creates pochi-${VERSION} directory contains the interpreter (bin/pochi), and dependent jar files (lib), documents (docs) and misc files (README.</description>
+    </item>
+    
+    <item>
       <title>:ant: Examples</title>
       <link>https://tamada.github.io/pochi/examples/</link>
-      <pubDate>Thu, 27 Aug 2020 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://tamada.github.io/pochi/examples/</guid>
       <description>📣 Overview The examples directory in the pochi directory contains the following example programs. To write groovy script for the pochi, see the API document of pochi, especially, BirthmarkSystemHelper.
@@ -63,21 +75,9 @@ The groovy script of pochi defines the two variables as follows.
     </item>
     
     <item>
-      <title>:anchor: Install</title>
-      <link>https://tamada.github.io/pochi/install/</link>
-      <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://tamada.github.io/pochi/install/</guid>
-      <description>🍺 Homebrew For macOS user, pochi supports homebrew installation.
-$ brew install tamada/brew/pochi  Go totop of the page
-💪 Compiling pochi yourself For building yourself, clone the source code from GitHub, and build it with Maven.
-$ git clone https://github.com/tamada/pochi.git $ cd pochi $ make build-all Then, make creates pochi-${VERSION} directory contains the interpreter (bin/pochi), and dependent jar files (lib) and misc files (README.md, LICENSE, completions, examples, and Dockerfile).</description>
-    </item>
-    
-    <item>
       <title>:smile: About</title>
       <link>https://tamada.github.io/pochi/about/</link>
-      <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://tamada.github.io/pochi/about/</guid>
       <description>📜 License 

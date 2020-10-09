@@ -156,61 +156,35 @@ We categorize resultant similarities into three groups below by $\varepsilon$.</
 <h2 id="-theft-detection-process-by-birthmarks">📕 Theft Detection Process by Birthmarks</h2>
 <p>The goal of software birthmarks is detecting the suspects of copies, not prove the theft.
 Therefore, the birthmark methods require to examine a huge amount of programs and to detect the suspects.</p>
-<figure>
-  <div class="mermaid" align="center">
-graph LR
-    id1(Collection);
-    id2(Extraction);
-    id3(Comparison);
-    id4(Examination);
-    id5(Post-process);
-    subgraph "Birthmark System"
-        id1 --> id2;
-        id2 --> id3;
-        id3 --> id4;
-    end
-    id4 --> id5;
-</div>
-  
-  <figcaption>Figure 1: theft detection process by the birthmarks</figcaption>
-  
+
+<figure >
+    
+        <img src="/pochi/images/birthmark_system.svg" alt="Figure 1: theft detection process by the birthmarks" />
+    
+    
+    <figcaption>
+        <p>
+        Figure 1: theft detection process by the birthmarks
+        
+            
+        
+        </p> 
+    </figcaption>
+    
 </figure>
 
-<p>Figure 1 shows the process of the theft detection with the birthmarks.
+<p class="avatar_caption">
+  Figure 1 shows the process of the theft detection with the birthmarks.
 The following descriptions shows above phases.</p>
-<p class="label" id="id1_phase">
-  Note that, the users to execute the theft detection have the original (plaintiff) programs.
-The user must collect the examine targets as defendant programs.
-We cannot know when and where does software theft do.
-Therefore, to improve the theft detection rate, we should collect programs as more as possible.
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 </p>
 
 
-<p class="label" id="id2_phase">
-  The next phase is the extraction phase for extracting birthmarks from the plaintiff and defendant programs with a given extraction method $f$.
-This phase generally requires a lot of time, because of extracting birthmarks from many programs.
-</p>
-
-
-<p class="label" id="id3_phase">
-  In the comparison phase, we compare the plaintiff and defendant birthmarks by a round-robin, and obtain similarity list.
-The comparison count is the $m \times n$, $m$, and $n$ means the count of plaintiff and defendant birthmarks.
-</p>
-
-
-<p class="label" id="id4_phase">
-  In the final phase in the birthmark system, we examine the pair of programs is theft or not from the similarity and both elements of birthmarks.
-Generally, this phase filters similarities by higher than EPSILON, then resultant pairs are the copy suspected programs.
-</p>
-
-
-<p class="label" id="id5_phase">
-  After detecting the suspects by the birthmark systems, we must inspect the details of pairs to prove the theft.
-Because the birthmark methods bury no information, therefore, accidental matches may occur.
-</p>
-
-
-<p class="navigation"><a href="#top" class="badge goto"><span class="label"><span class="far fa-caret-square-up label"></span> Go to</span><span class="value">top of the page</span></a></p>
 
 
 
